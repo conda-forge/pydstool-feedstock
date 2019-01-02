@@ -16,9 +16,8 @@ Summary: PyDSTool is a sophisticated & integrated simulation and analysis enviro
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pydstool-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pydstool-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/pydstool-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/pydstool-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/pydstool-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/pydstool-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pydstool-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pydstool-feedstock)
 
 Current release info
 ====================
