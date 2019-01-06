@@ -11,22 +11,24 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1000
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
     - six
-    - scipy >=0.9
-    - numpy >=1.6
+    - scipy 0.11.*
+    - numpy 1.6.*
 
   run:
     - python
     - six
-    - scipy >=0.9
-    - numpy >=1.6
+    # package is not compatible with scipy 1.* due to version check in the code
+    - {{ pin_compatible('scipy') }}
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
@@ -45,9 +47,13 @@ test:
 
 about:
   home: http://www.ni.gsu.edu/~rclewley/PyDSTool/FrontPage.html
-  license: BSD 3-Clause
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
-  summary: 'PyDSTool is a sophisticated & integrated simulation and analysis environment for dynamical systems models of physical systems (ODEs, DAEs, maps, and hybrid systems).'
+  summary: |
+    PyDSTool is a sophisticated & integrated simulation and analysis environment
+    for dynamical systems models of physical systems (ODEs, DAEs, maps, and
+    hybrid systems).
   doc_url: http://www.ni.gsu.edu/~rclewley/PyDSTool/ProjectOverview.html
   dev_url: https://github.com/robclewley/pydstool
 
