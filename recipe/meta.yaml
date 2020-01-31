@@ -1,5 +1,5 @@
-{% set version = "0.90.2" %}
-{% set sha256 = "6e0cbceab8088ee8cbd0839202cdbaeebbe4ab2e6d1a0d0053c7de30268587c1" %}
+{% set version = "0.91.0" %}
+{% set sha256 = "f21044d721461310f0605b7a83fba6cba78d1703456042809bde9d772c9b5c95" %}
 
 package:
   name: pydstool
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
