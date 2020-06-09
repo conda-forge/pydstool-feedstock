@@ -120,4 +120,5 @@ Feedstock Maintainers
 =====================
 
 * [@ChrisRackauckas](https://github.com/ChrisRackauckas/)
+* [@repagh](https://github.com/repagh/)
 
