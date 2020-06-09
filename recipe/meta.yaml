@@ -1,5 +1,4 @@
 {% set version = "0.91.0" %}
-{% set sha256 = "f21044d721461310f0605b7a83fba6cba78d1703456042809bde9d772c9b5c95" %}
 
 package:
   name: pydstool
@@ -8,7 +7,7 @@ package:
 source:
   fn: pydstool-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/PyDSTool/PyDSTool-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: f21044d721461310f0605b7a83fba6cba78d1703456042809bde9d772c9b5c95
 
 build:
   number: 0
@@ -19,16 +18,10 @@ requirements:
   host:
     - python
     - pip
-    - six
-    - scipy
-    - numpy
-
   run:
     - python
-    - six
-    # package is not compatible with scipy 1.* due to version check in the code
-    - {{ pin_compatible('scipy') }}
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.6
+    - scipy >=1.0
 
 test:
   imports:
@@ -44,6 +37,10 @@ test:
     - PyDSTool.Toolbox.optimizers.step
     - PyDSTool.core
     - PyDSTool.core.codegenerators
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://www.ni.gsu.edu/~rclewley/PyDSTool/FrontPage.html
