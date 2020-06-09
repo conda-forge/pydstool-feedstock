@@ -5,14 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  fn: pydstool-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/P/PyDSTool/PyDSTool-{{ version }}.tar.gz
   sha256: f21044d721461310f0605b7a83fba6cba78d1703456042809bde9d772c9b5c95
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
